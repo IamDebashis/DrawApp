@@ -43,6 +43,7 @@ class CostumeCanvas(private val mContext: Context, attr: AttributeSet? = null) :
         canvas.drawPaint(backgroundColor)
         val path = Path()
 
+        /***** Draw current shape */
         when (currentToolsState) {
             Tools.Pencil -> {
                 currentPencil?.let {
@@ -88,7 +89,7 @@ class CostumeCanvas(private val mContext: Context, attr: AttributeSet? = null) :
             }
         }
 
-
+        /**** Draw Previous save shapes */
         arrows.forEach {
             showArrow(it, canvas)
         }
